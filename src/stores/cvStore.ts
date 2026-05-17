@@ -5,8 +5,8 @@ export interface CV {
   id: string
   name: string
   description: string
-  createdAt: string
-  updatedAd: string
+  createdAt: Date
+  updatedAd: Date
   sections: string[]
 }
 
@@ -15,8 +15,8 @@ export interface CVSection {
   type: string
   title: string
   data: string
-  createdAt: string
-  updatedAt: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 export const useCVStore = defineStore("cvs", () => {
@@ -33,7 +33,7 @@ export const useCVStore = defineStore("cvs", () => {
 
   function createCv(payload: { name: string; description?: string; sections?: string[] }) {
     const id = makeId()
-    const now = new Date().toISOString()
+    const now = new Date()
     const cv: CV = {
       id,
       name: payload.name,
@@ -58,7 +58,7 @@ export const useCVStore = defineStore("cvs", () => {
 
   function createCvSection(payload: { type: string; title?: string; data?: string }) {
     const id = makeId()
-    const now = new Date().toISOString()
+    const now = new Date()
     const section: CVSection = {
       id,
       type: payload.type,
