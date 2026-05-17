@@ -10,6 +10,11 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: "/cvs",
+      name: "cv-index",
+      component: () => import("../views/CvIndexView.vue"),
+    },
+    {
       path: "/cvs/:id",
       name: "cv-detail",
       component: () => import("../views/CvDetailView.vue"),
