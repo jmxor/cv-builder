@@ -14,6 +14,7 @@ import DataTable from "@/components/DataTable.vue"
 import DataTableToolbar from "../DataTableToolbar.vue"
 import { IconPlus } from "@tabler/icons-vue"
 import { useCVStore } from "@/stores/cvStore"
+import DataTablePagination from "../DataTablePagination.vue"
 
 const props = defineProps<{
   columns: ColumnDef<TData, TValue>[]
@@ -56,4 +57,5 @@ const table = useVueTable({
     </Button>
   </DataTableToolbar>
   <DataTable :table="table" />
+  <DataTablePagination :table="table" />
 </template>
